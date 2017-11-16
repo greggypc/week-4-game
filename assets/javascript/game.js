@@ -10,22 +10,39 @@
 //button Restart Game resets wins/losses and creates random set of values for 4 crystals to begin again
 
 
- $(document).ready(function() {
+ // $(document).ready(function() {
 
-      // FUNCTIONS
-      // ====================================================================
-      // Here we create various on "click" functions which capture the clicks
-      // Inside each click event is the code to create an alert, update the counter, then show the updated count.
-      // ...
-      $("#button1").on("click", function() {
-     var num = 10000000 + Math.floor(Math.random() * 900000000);
-         $("#lottoNums").prepend  ("<h3>" + num + "</h3>");
+     
+      function gameStart() {
+      	var targetNumber = 18 + Math.floor(Math.random() * 101);
+      	var crystal1 = 1 + Math.floor(Math.random() * 11);
+      	var crystal2 = 1 + Math.floor(Math.random() * 11);
+      	var crystal3 = 1 + Math.floor(Math.random() * 11);
+      	var crystal4 = 1 + Math.floor(Math.random() * 11);
+      	var scoreCount = "";
+      	var wins = 0;
+      	var loses = 0;
+
+      	$("#targetNumber").html("<h1>" + targetNumber + "</h1>");
+      	$("#totalWins").html("<h1>" + "Wins " + wins + "</h1>");
+      	$("#totalLosses").html("<h1>" + "Loses " + loses + "</h1>");
+
+      };
+      
+
+      var crystal1 = $("<img>").addClass("crystal-image").attr("src", "assets/images/smallfish.jpg").attr("data-crystalvalue", numberOptions[i]);
+
+    $("#crystal1").append(crystal1);
+
+     //  $("#button1").on("click", function() {
+
+     //  	$("#scoreCount").html
+     // var num = 1 + Math.floor(Math.random() * 11);
+     //     $("#scoreCount").prepend  ("<h3>" + num + "</h3>");
         
 
-      });
+     //  });
 
       
 
-      // .10 + 
-
-    });
+    // });  //end document.ready

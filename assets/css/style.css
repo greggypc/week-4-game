@@ -1,0 +1,25 @@
+/*Crystal Game Style*/
+
+body {
+	background-color: #ccc;
+	
+}
+
+h1 {
+	font-size: 34px;
+}
+
+
+#scoreCount {
+	background-color: #fff;
+	color: blue;
+	padding: 10px;
+	text-align: center;
+}
+
+#targetNumber {
+	background-color: #fff;
+	color: blue;
+	padding: 10px;
+	text-align: center;
+}
