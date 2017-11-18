@@ -29,7 +29,7 @@ $(document).ready(function() {
 		};
 
  		function clickToPlay() {
-	 		layoutGame();
+	 		
 			$("#billy").on("click", function() {
 			    scoreCount += num1;
 			    $("#scoreCount").html("<h1>" + "Score count is " + scoreCount + "</h1>");
@@ -43,7 +43,7 @@ $(document).ready(function() {
 			    scoreCount += num2;
 			    $("#scoreCount").html("<h1>" + "Score count is " + scoreCount + "</h1>");
 			     console.log("light button clicked");
-			     gameResults();
+			    gameResults();
 			
 			});
 
@@ -64,12 +64,16 @@ $(document).ready(function() {
 		  
 			});
 
-		}; //end gameStart
+		}; //end clichToPlay
+
+
 
 	function gameResults() {
 		if (scoreCount === targetNumber) {
+			console.log("about to run winGame function");
 	        winGame();
 	    } else if (scoreCount > targetNumber) {
+	    	console.log("about to run loseGame function");
 	        loseGame();
 	    }
 	};
@@ -78,17 +82,17 @@ $(document).ready(function() {
 	function winGame() {
 	    wins++;
 	    $("#totalWins").html("<h1>" + "Wins " + wins + "</h1>");
-	    console.log("function winGame ran")
+	    console.log("function winGame ran");
 	    resetGame();
 	    clickToPlay();
 
 	  	};
 
 	function loseGame() {
-	    losses++;
+		losses++;
 	    $("#totalLosses").html("<h1>" + "Losses " + losses + "</h1>");
-	    console.log("function loseGame ran")
 	    resetGame();
+	    console.log("function loseGame ran");
 	    clickToPlay();
 	    };
 
@@ -99,8 +103,8 @@ $(document).ready(function() {
 	// };
 
 	function resetGame() {
-	     var scoreCount = 0;
-	    $("#scoreCount").html("<h1>" + "Score count is " + scoreCount + "</h1>");
+		scoreCount = 0;
+		$("#scoreCount").html("<h1>" + "game ended - Score count is " + scoreCount + "</h1>");
 	    var targetNumber = 18 + Math.floor(Math.random() * 101);
 	    $("#targetNumber").html("<h1>" + targetNumber + "</h1>");
 	    var num1 = 1 + Math.floor(Math.random() * 11);
@@ -110,12 +114,12 @@ $(document).ready(function() {
 	    console.log("function resetGame");
 	    
 	    };
-// }
 
-
+layoutGame();
 clickToPlay();
- });
 
+
+ });
 
 
 
