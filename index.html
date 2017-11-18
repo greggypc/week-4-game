@@ -12,7 +12,7 @@
    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
-<body>
+<body onload="layoutGame()">
 
 
 <div class="container">
@@ -31,6 +31,11 @@
 		</div>
 
 		<div class="col-lg-8">
+			<div id="crystal1"></div>
+			<div id="crystal2"></div>
+			<div id="crystal3"></div>
+			<div id="crystal4"></div>
+
 			<button id="button1">Button1</button>
 			<button id="button2">Button2</button>
 			<button id="button3">Button3</button>
@@ -47,18 +52,18 @@
 
 	<div class="row">
 		<div class="col-lg-6">
-			<div id="totalWins">wins</div>
+			<div id="totalWins"></div>
 		</div>
 
 		<div class="col-lg-6">
-			<div id="totalLosses">losses</div>
+			<div id="totalLosses"></div>
 		</div>
 
 	</div>  <!-- end wins/losses row -->	
 </div> <!--  end main container -->
 
 <script type="text/javascript" src="assets/javascript/game.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
 
 	
 	

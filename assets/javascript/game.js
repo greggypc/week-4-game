@@ -10,29 +10,48 @@
 //button Restart Game resets wins/losses and creates random set of values for 4 crystals to begin again
 
 
- // $(document).ready(function() {
-
+ 
+  
+  	  function layoutGame() {
+  	  	var targetNumber = 18 + Math.floor(Math.random() * 101);
+      	var num1 = 1 + Math.floor(Math.random() * 11);
+      	var num2 = 1 + Math.floor(Math.random() * 11);
+      	var num3 = 1 + Math.floor(Math.random() * 11);
+      	var num4 = 1 + Math.floor(Math.random() * 11);
+      	var scoreCount = 0;
+      	var wins = 0;
+      	var losses = 0;
+  	  	$("#targetNumber").html("<h1>" + targetNumber + "</h1>");
+      	$("#totalWins").html("<h1>" + "Wins " + wins + "</h1>");
+      	$("#totalLosses").html("<h1>" + "Loses " + losses + "</h1>");
+      	$("#scoreCount").html("<h1>" + "Your total score: " + scoreCount + "</h1>");
+  	  }
      
       function gameStart() {
-      	var targetNumber = 18 + Math.floor(Math.random() * 101);
-      	var crystal1 = 1 + Math.floor(Math.random() * 11);
-      	var crystal2 = 1 + Math.floor(Math.random() * 11);
-      	var crystal3 = 1 + Math.floor(Math.random() * 11);
-      	var crystal4 = 1 + Math.floor(Math.random() * 11);
-      	var scoreCount = "";
-      	var wins = 0;
-      	var loses = 0;
+      	
 
-      	$("#targetNumber").html("<h1>" + targetNumber + "</h1>");
-      	$("#totalWins").html("<h1>" + "Wins " + wins + "</h1>");
-      	$("#totalLosses").html("<h1>" + "Loses " + loses + "</h1>");
+      	}
 
-      };
+      function winner() {
+      	if (scoreCount === targetNumber) {
+      		wins++;
+      		$("#totalWins").html("<h1>" + "Wins " + wins + "</h1>");
+      		resetGame();
+      	}
+      }
+
+       function loser() {
+      	if (scoreCount > targetNumber) {
+      		losses++;
+      		$("#totalLosses").html("<h1>" + "Losses " + losses + "</h1>");
+      		resetGame();
+      	}
+      }
       
 
-      var crystal1 = $("<img>").addClass("crystal-image").attr("src", "assets/images/smallfish.jpg").attr("data-crystalvalue", numberOptions[i]);
+    //   var crystal1 = $("<img>").addClass("crystal-image").attr("src", "assets/images/smallfish.jpg").attr("data-crystalvalue", numberOptions[i]);
 
-    $("#crystal1").append(crystal1);
+    // $("#crystal1").append(crystal1);
 
      //  $("#button1").on("click", function() {
 
@@ -42,7 +61,14 @@
         
 
      //  });
-
+     function resetGame() {
+     	var targetNumber = 18 + Math.floor(Math.random() * 101);
+      	var num1 = 1 + Math.floor(Math.random() * 11);
+      	var num2 = 1 + Math.floor(Math.random() * 11);
+      	var num3 = 1 + Math.floor(Math.random() * 11);
+      	var num4 = 1 + Math.floor(Math.random() * 11);
+      	var scoreCount = 0;
+     }
       
 
-    // });  //end document.ready
+   
