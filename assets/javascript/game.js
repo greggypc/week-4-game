@@ -10,96 +10,91 @@
 //button Restart Game resets wins/losses and creates random set of values for 4 crystals to begin again
 
 
- // (document).ready(function() {
-  
-  	  function layoutGame() {
-  	  	var targetNumber = 18 + Math.floor(Math.random() * 101);
-      	// var num1 = 1 + Math.floor(Math.random() * 11);
-      	// var num2 = 1 + Math.floor(Math.random() * 11);
-      	// var num3 = 1 + Math.floor(Math.random() * 11);
-      	// var num4 = 1 + Math.floor(Math.random() * 11);
-      	// var scoreCount = 0;
-      	var wins = 0;
-      	var losses = 0;
-  	  	$("#targetNumber").html("<h1>" + targetNumber + "</h1>");
-      	$("#totalWins").html("<h1>" + "Wins " + wins + "</h1>");
-      	$("#totalLosses").html("<h1>" + "Loses " + losses + "</h1>");
-      	$("#scoreCount").html("<h1>" + "Your total score: " + scoreCount + "</h1>");
+// (document).ready(function() {
 
-  	  }
-     
-       function winner() {
-      		wins++;
-      		$("#totalWins").html("<h1>" + "Wins " + wins + "</h1>");
-      		resetGame();
-      	    }
+function gameStart() {
+var targetNumber = 18 + Math.floor(Math.random() * 101);
+var num1 = 1 + Math.floor(Math.random() * 11);
+var num2 = 1 + Math.floor(Math.random() * 11);
+var num3 = 1 + Math.floor(Math.random() * 11);
+var num4 = 1 + Math.floor(Math.random() * 11);
+var scoreCount = 0;
+var wins = 0;
+var losses = 0;
+$("#targetNumber").html("<h1>" + targetNumber + "</h1>");
+$("#totalWins").html("<h1>" + "Wins " + wins + "</h1>");
+$("#totalLosses").html("<h1>" + "Loses " + losses + "</h1>");
+$("#scoreCount").html(scoreCount);
 
-       function loser() {
-      		losses++;
-      		$("#totalLosses").html("<h1>" + "Losses " + losses + "</h1>");
-      		resetGame();
-      		}
-      
-		var num1 = 1 + Math.floor(Math.random() * 11);
-      	var num2 = 1 + Math.floor(Math.random() * 11);
-      	var num3 = 1 + Math.floor(Math.random() * 11);
-      	var num4 = 1 + Math.floor(Math.random() * 11);
-    	var scoreCount = 0;
-   
+// }
 
-      $("#billy").on("click", function() {
-      	scoreCount += num1;
-      	$("#scoreCount").html(scoreCount);
-      	if (scoreCount === targetNumber) {
-      		winner();
-      	}
-      	else if (scoreCount > targetNumber) {
-      		loser();
-      	}
-      });
+$("#billy").on("click", function() {
+    scoreCount += num1;
+    $("#scoreCount").html(scoreCount);
+    if (scoreCount === targetNumber) {
+        winner();
+    } else if (scoreCount > targetNumber) {
+        loser();
+    }
+});
 
-      $("#light").on("click", function() {
-      	scoreCount += num2;
-      	$("#scoreCount").html(scoreCount);
-      	if (scoreCount === targetNumber) {
-      		winner();
-      	}
-      	else if (scoreCount > targetNumber) {
-      		loser();
-      	}
-      });
+$("#light").on("click", function() {
+    scoreCount += num2;
+    $("#scoreCount").html(scoreCount);
+    if (scoreCount === targetNumber) {
+        winner();
+    } else if (scoreCount > targetNumber) {
+        loser();
+    }
+});
 
-      $("#gayle").on("click", function() {
-      	scoreCount += num3;
-      	$("#scoreCount").html(scoreCount);
-      	if (scoreCount === targetNumber) {
-      		winner();
-      	}
-      	else if (scoreCount > targetNumber) {
-      		loser();
-      	}
-      });
+$("#gayle").on("click", function() {
+    scoreCount += num3;
+    $("#scoreCount").html(scoreCount);
+    if (scoreCount === targetNumber) {
+        winner();
+    } else if (scoreCount > targetNumber) {
+        loser();
+    }
+});
 
-      $("#pepsi").on("click", function() {
-      	scoreCount += num4;
-      	$("#scoreCount").html(scoreCount);
-      	if (scoreCount === targetNumber) {
-      		winner();
-      	}
-      	else if (scoreCount > targetNumber) {
-      		loser();
-      	}
-      });
-   
+$("#pepsi").on("click", function() {
+    scoreCount += num4;
+    $("#scoreCount").html(scoreCount);
+    if (scoreCount === targetNumber) {
+        winner();
+    } else if (scoreCount > targetNumber) {
+        loser();
+    }
+});
 
-     function resetGame() {
-     	var targetNumber = 18 + Math.floor(Math.random() * 101);
-      	var num1 = 1 + Math.floor(Math.random() * 11);
-      	var num2 = 1 + Math.floor(Math.random() * 11);
-      	var num3 = 1 + Math.floor(Math.random() * 11);
-      	var num4 = 1 + Math.floor(Math.random() * 11);
-      	var scoreCount = 0;
-     }
-      
+
+function winner() {
+    wins++;
+    $("#totalWins").html("<h1>" + "Wins " + wins + "</h1>");
+    resetGame();
+
+}
+
+function loser() {
+    losses++;
+    $("#totalLosses").html("<h1>" + "Losses " + losses + "</h1>");
+    resetGame();
+}
+
+
+
+function resetGame() {
+    var targetNumber = 18 + Math.floor(Math.random() * 101);
+    $("#targetNumber").html("<h1>" + targetNumber + "</h1>");
+    var num1 = 1 + Math.floor(Math.random() * 11);
+    var num2 = 1 + Math.floor(Math.random() * 11);
+    var num3 = 1 + Math.floor(Math.random() * 11);
+    var num4 = 1 + Math.floor(Math.random() * 11);
+    var scoreCount = 0;
+    $("#scoreCount").html(scoreCount);
+    gameStart();
+}
+}
+
 // });
-   
