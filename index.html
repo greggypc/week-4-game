@@ -20,33 +20,31 @@
 		<div class="col-lg-12">
 			<h1>Crystal Collector</h1>
 			<p>Instructions here</p>
-			 <button type="button" class="btn btn-warning" onclick="gameStart();">START!</button>
+			<!--  <button type="button" class="btn btn-warning" onclick="gameStart();">START!</button> -->
 		</div>
 
 	</header> <!-- end header row -->
 
 	<div class="row">
-		<div class="col-lg-2">
-			<div id="targetNumber"></div>
-		</div>
-
-		<div class="col-lg-8">
-			<div id="crystal1"></div>
-			<div id="crystal2"></div>
-			<div id="crystal3"></div>
-			<div id="crystal4"></div>
-
-			<button id="button1">Button1</button>
-			<button id="button2">Button2</button>
-			<button id="button3">Button3</button>
-			<button id="button4">Button4</button>
-
-		</div>
-
-		<div class="col-lg-2">
-			<div id="scoreCount"></div>
+		<div class="col-lg-3">
+			<div class="row">
+				<div id="targetNumber"></div>
+			</div>
+			<div class="row">
+				<h1>Your total score: <span id="scoreCount"></span></h1>
+			</div>
 			
 		</div>
+
+		<div class="col-lg-9">
+			<img class="crystalImg" src="assets/images/billy.jpg" alt="Billy" id="billy" />
+			<img class="crystalImg" src="assets/images/light.jpg" alt="Light" id="light" />
+			<img class="crystalImg" src="assets/images/gayle.jpg" alt="Gayle" id="gayle" />
+			<img class="crystalImg" src="assets/images/pepsi.jpg" alt="Pepsi" id="pepsi" />
+
+		</div>
+
+		
 
 	</div>  <!-- end main game row -->	
 
