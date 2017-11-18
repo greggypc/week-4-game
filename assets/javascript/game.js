@@ -69,7 +69,7 @@ $(document).ready(function() {
 	function gameResults() {
 		if (scoreCount === targetNumber) {
 	        winGame();
-	    } else if (scoreCount >= targetNumber) {
+	    } else if (scoreCount > targetNumber) {
 	        loseGame();
 	    }
 	};
@@ -80,6 +80,8 @@ $(document).ready(function() {
 	    $("#totalWins").html("<h1>" + "Wins " + wins + "</h1>");
 	    console.log("function winGame ran")
 	    resetGame();
+	    clickToPlay();
+
 	  	};
 
 	function loseGame() {
@@ -87,24 +89,26 @@ $(document).ready(function() {
 	    $("#totalLosses").html("<h1>" + "Losses " + losses + "</h1>");
 	    console.log("function loseGame ran")
 	    resetGame();
+	    clickToPlay();
 	    };
 
-	function resetCrystals() {
-		var num1 = 1 + Math.floor(Math.random() * 11);
-	    var num2 = 1 + Math.floor(Math.random() * 11);
-	    var num3 = 1 + Math.floor(Math.random() * 11);
-	    var num4 = 1 + Math.floor(Math.random() * 11);
-	    console.log("function resetCrystals ran");
-	    clickToPlay();
-	};
+	// function resetCrystals() {
+		
+	//     console.log("function resetCrystals ran");
+	//     clickToPlay();
+	// };
 
 	function resetGame() {
 	     var scoreCount = 0;
 	    $("#scoreCount").html("<h1>" + "Score count is " + scoreCount + "</h1>");
 	    var targetNumber = 18 + Math.floor(Math.random() * 101);
 	    $("#targetNumber").html("<h1>" + targetNumber + "</h1>");
+	    var num1 = 1 + Math.floor(Math.random() * 11);
+	    var num2 = 1 + Math.floor(Math.random() * 11);
+	    var num3 = 1 + Math.floor(Math.random() * 11);
+	    var num4 = 1 + Math.floor(Math.random() * 11);
 	    console.log("function resetGame");
-	    resetCrystals();
+	    
 	    };
 // }
 
