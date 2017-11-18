@@ -7,8 +7,10 @@
 //if scoreCount > targetNumber - you lose++ - game restarts
 //if scoreCount === targetNumber - you win++ - game restarts
 
+//var randomNum = Math.floor(Math.random() * (12-1+1)) + 1;
+
 //button Restart Game resets wins/losses and creates random set of values for 4 crystals to begin again
-var targetNumber = 18 + Math.floor(Math.random() * 101);
+var targetNumber = Math.floor(Math.random() * (120-19+1)) + 19;
 var num1 = 1 + Math.floor(Math.random() * 11);
 var num2 = 1 + Math.floor(Math.random() * 11);
 var num3 = 1 + Math.floor(Math.random() * 11);
@@ -19,105 +21,95 @@ var losses = 0;
 
 $(document).ready(function() {
 
-
-
-
 		function layoutGame() {
 			$("#targetNumber").html("<h1>" + targetNumber + "</h1>");
 			$("#totalWins").html("<h1>" + "Wins " + wins + "</h1>");
-			$("#totalLosses").html("<h1>" + "Loses " + losses + "</h1>");
+			$("#totalLosses").html("<h1>" + "Losses " + losses + "</h1>");
 			$("#scoreCount").html("<h1>" + "Score count is " + scoreCount + "</h1>");
-		}
+		};
+
+ 		function clickToPlay() {
+	 		layoutGame();
+			$("#billy").on("click", function() {
+			    scoreCount += num1;
+			    $("#scoreCount").html("<h1>" + "Score count is " + scoreCount + "</h1>");
+			    console.log("billy button clicked");
+			    gameResults();
+			    });
+			   
+			
+
+			$("#light").on("click", function() {
+			    scoreCount += num2;
+			    $("#scoreCount").html("<h1>" + "Score count is " + scoreCount + "</h1>");
+			     console.log("light button clicked");
+			     gameResults();
+			
+			});
+
+			$("#gayle").on("click", function() {
+			    scoreCount += num3;
+			    $("#scoreCount").html("<h1>" + "Score count is " + scoreCount + "</h1>");
+			    console.log("gayle button clicked");
+			    gameResults();
+			   
+			    
+			});
+
+			$("#pepsi").on("click", function() {
+			    scoreCount += num4;
+			    $("#scoreCount").html("<h1>" + "Score count is " + scoreCount + "</h1>");
+			    console.log("pepsi button clicked");
+			    gameResults();
+		  
+			});
+
+		}; //end gameStart
+
+	function gameResults() {
+		if (scoreCount === targetNumber) {
+	        winGame();
+	    } else if (scoreCount >= targetNumber) {
+	        loseGame();
+	    }
+	};
 
 
+	function winGame() {
+	    wins++;
+	    $("#totalWins").html("<h1>" + "Wins " + wins + "</h1>");
+	    console.log("function winGame ran")
+	    resetGame();
+	  	};
 
- function gameStart() {
- 		layoutGame();
-		$("#billy").on("click", function() {
-		    scoreCount += num1;
-		    $("#scoreCount").html(scoreCount);
-		    console.log("billy button clicked");
-		    gameResults();
-		    });
-		   
-		
+	function loseGame() {
+	    losses++;
+	    $("#totalLosses").html("<h1>" + "Losses " + losses + "</h1>");
+	    console.log("function loseGame ran")
+	    resetGame();
+	    };
 
-		$("#light").on("click", function() {
-		    scoreCount += num2;
-		    $("#scoreCount").html(scoreCount);
-		     console.log("light button clicked");
-		     gameResults();
-		
-		});
+	function resetCrystals() {
+		var num1 = 1 + Math.floor(Math.random() * 11);
+	    var num2 = 1 + Math.floor(Math.random() * 11);
+	    var num3 = 1 + Math.floor(Math.random() * 11);
+	    var num4 = 1 + Math.floor(Math.random() * 11);
+	    console.log("function resetCrystals ran");
+	    clickToPlay();
+	};
 
-		$("#gayle").on("click", function() {
-		    scoreCount += num3;
-		    $("#scoreCount").html(scoreCount);
-		    console.log("gayle button clicked");
-		    gameResults();
-		   
-		    
-		});
-
-		$("#pepsi").on("click", function() {
-		    scoreCount += num4;
-		    $("#scoreCount").html(scoreCount);
-		    console.log("pepsi button clicked");
-		    gameResults();
-	  
-		});
-
-}; //end gameStart
-
-function gameResults() {
-	if (scoreCount === targetNumber) {
-        winner();
-    } else if (scoreCount > targetNumber) {
-        loser();
-    }
-};
-
-
-function winner() {
-    wins++;
-    $("#totalWins").html("<h1>" + "Wins " + wins + "</h1>");
-    console.log("function winner ran")
-    resetGame();
-    
-
-};
-
-function loser() {
-    losses++;
-    $("#totalLosses").html("<h1>" + "Losses " + losses + "</h1>");
-    console.log("function loser ran")
-    resetGame();
-    
-};
-
-function resetCrystals() {
-	 var num1 = 1 + Math.floor(Math.random() * 11);
-    var num2 = 1 + Math.floor(Math.random() * 11);
-    var num3 = 1 + Math.floor(Math.random() * 11);
-    var num4 = 1 + Math.floor(Math.random() * 11);
-    console.log("function resetCrystals ran");
-};
-
-function resetGame() {
-     var scoreCount = 0;
-    $("#scoreCount").html(scoreCount);
-    var targetNumber = 18 + Math.floor(Math.random() * 101);
-    $("#targetNumber").html("<h1>" + targetNumber + "</h1>");
-    console.log("function resetGame");
-   
-    resetCrystals();
-    // gameStart();
-    
-};
+	function resetGame() {
+	     var scoreCount = 0;
+	    $("#scoreCount").html("<h1>" + "Score count is " + scoreCount + "</h1>");
+	    var targetNumber = 18 + Math.floor(Math.random() * 101);
+	    $("#targetNumber").html("<h1>" + targetNumber + "</h1>");
+	    console.log("function resetGame");
+	    resetCrystals();
+	    };
 // }
 
 
-gameStart();
+clickToPlay();
  });
 
 
