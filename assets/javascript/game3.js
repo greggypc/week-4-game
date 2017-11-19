@@ -24,39 +24,43 @@ var losses = 0;
 		function clickToPlay() {
 	 		console.log("scoreCount " + scoreCount);
 	 		console.log("targetNumber " + targetNumber);
+			
 			$(".crystalImg").click(function(){
-				if (this.id == "billy") {
-					console.log("num1 = " + num1)
+				if (this.id === "billy") {
+					console.log("num1 = " + num1);
 			    scoreCount += num1;
-			    	console.log("num1 after should be same = " + num1)
 			    $("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
 			    console.log("billy button clicked -1");
 			    console.log("scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
-			    } else if (this.id == "light") {
-			    	console.log("num2 = " + num2)
+			    gameResults();
+			    } else if (this.id === "light") {
+			    	console.log("num2 = " + num2);
 			      scoreCount += num2;
-			      console.log("num2 after should be same = " + num2)
 			      $("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
 			      console.log("light button clicked -2");
 			      console.log("scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
-			    } else if (this.id == "gayle") {
-			    	console.log("num3 = " + num3)
+			      gameResults();
+			    } else if (this.id === "gayle") {
+			    	console.log("num3 = " + num3);
 			      scoreCount += num3;
-			      console.log("num3 after should be same = " + num3)
 			      $("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
 			      console.log("gayle button clicked -3");
 			      console.log("scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
-			    } else if (this.id == "pepsi") {
-			    	console.log("num4 = " + num4)
+			      gameResults();
+			    } else if (this.id === "pepsi") {
+			    	console.log("num4 = " + num4);
 			      scoreCount += num4;
-			      console.log("num4 after should be same = " + num4)
 			      $("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
 			      console.log("pepsi button clicked -4");
 			      console.log("scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
-			    } gameResults();
-			    
-			    });
+			      gameResults();
+			    } 
 
+			    
+			    console.log("***didn't win or lose yet");
+			    });  //end click function
+
+				
 			}; //end clickToPlay
 
 		function gameResults() {
@@ -64,15 +68,20 @@ var losses = 0;
 		if (scoreCount === targetNumber) {
 			console.log("about to run winGame function");
 			console.log("win in function gameResults -- scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
+			console.log("scoreCount " + scoreCount);
+	 		console.log("targetNumber " + targetNumber);
 	        winGame();
 	    }else if (scoreCount >= targetNumber) {
 	    	console.log("scoreCount " + scoreCount);
 	    	console.log("about to run loseGame function");
 	    	console.log("loss in function gameResults -- scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
+	    	console.log("scoreCount " + scoreCount);
+	 		console.log("targetNumber " + targetNumber);
 	        loseGame();
-	    }else {
-	    	return;
 	    }
+	    // else {
+	    // 	return;
+	    // }
 		};
 
 
