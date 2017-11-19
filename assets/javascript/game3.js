@@ -18,17 +18,16 @@ var losses = 0;
 			$("#totalWinsHolder").html("<h1>" + "Wins " + wins + "</h1>");
 			$("#totalLossesHolder").html("<h1>" + "Losses " + losses + "</h1>");
 			$("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
-			clickToPlay();
-		};
+			};
 
 
-		function clickToPlay() {
+		// function clickToPlay() {
 
 			
 
 
-	 		console.log("scoreCount " + scoreCount);
-	 		console.log("targetNumber " + targetNumber);
+	 // 		console.log("scoreCount " + scoreCount);
+	 // 		console.log("targetNumber " + targetNumber);
 			
 			$(".crystalImg").click(function(){
 				if (this.id === "billy") {
@@ -64,7 +63,7 @@ var losses = 0;
 			    console.log("***didn't win or lose yet");
 			    });  //end click function
 				
-			}; //end clickToPlay
+			//}; //end clickToPlay
 
 		function gameResults() {
 			if (scoreCount === targetNumber) {
@@ -122,7 +121,7 @@ var losses = 0;
 		//console.log(num1 + " " + num2 + " " + num3 + " " num4);
 	    console.log("function resetGame ran");
 	    //return;
-	    clickToPlay();
+	    //clickToPlay();
 	    };
 
 
