@@ -10,14 +10,14 @@ h1 {
 }
 
 
-#scoreCount {
+#scoreCountHolder {
 	background-color: #fff;
 	color: blue;
 	padding: 10px;
 	text-align: center;
 }
 
-#targetNumber {
+#targetNumberHolder {
 	background-color: #fff;
 	color: blue;
 	padding: 10px;
