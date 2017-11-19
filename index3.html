@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Crystal Game</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="col-lg-12">
+                <h1>Crystal Collector</h1>
+                <p>Instructions here</p>
+                <!--  <button type="button" class="btn btn-warning" onclick="gameStart();">START!</button> -->
+            </div>
+        </header>
+        <!-- end header row -->
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="targetNumber"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 id="scoreCount"></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 ">
+                <img class="crystalImg" src="assets/images/billy.jpg" alt="Billy" id="billy" />
+                <img class="crystalImg" src="assets/images/light.jpg" alt="Light" id="light" />
+                <img class="crystalImg" src="assets/images/gayle.jpg" alt="Gayle" id="gayle" />
+                <img class="crystalImg" src="assets/images/pepsi.jpg" alt="Pepsi" id="pepsi" />
+            </div>
+        </div>
+        <!-- end main game row -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div id="totalWins"></div>
+            </div>
+            <div class="col-lg-6">
+                <div id="totalLosses"></div>
+            </div>
+        </div>
+        <!-- end wins/losses row -->
+    </div>
+    <!--  end main container -->
+
+    
+    <script type="text/javascript" src="assets/javascript/game3.js"></script>
+   
+    </body>
+
+</html>
