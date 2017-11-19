@@ -18,10 +18,15 @@ var losses = 0;
 			$("#totalWinsHolder").html("<h1>" + "Wins " + wins + "</h1>");
 			$("#totalLossesHolder").html("<h1>" + "Losses " + losses + "</h1>");
 			$("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
+			clickToPlay();
 		};
 
 
 		function clickToPlay() {
+
+			
+
+
 	 		console.log("scoreCount " + scoreCount);
 	 		console.log("targetNumber " + targetNumber);
 			
@@ -56,27 +61,21 @@ var losses = 0;
 			      gameResults();
 			    } 
 
-			    
 			    console.log("***didn't win or lose yet");
 			    });  //end click function
-
 				
 			}; //end clickToPlay
 
 		function gameResults() {
-			console.log("scoreCount " + scoreCount);
-		if (scoreCount === targetNumber) {
+			if (scoreCount === targetNumber) {
 			console.log("about to run winGame function");
 			console.log("win in function gameResults -- scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
-			console.log("scoreCount " + scoreCount);
-	 		console.log("targetNumber " + targetNumber);
+			console.log("targetNumber " + targetNumber);
 	        winGame();
 	    }else if (scoreCount >= targetNumber) {
-	    	console.log("scoreCount " + scoreCount);
 	    	console.log("about to run loseGame function");
 	    	console.log("loss in function gameResults -- scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
-	    	console.log("scoreCount " + scoreCount);
-	 		console.log("targetNumber " + targetNumber);
+	    	console.log("targetNumber " + targetNumber);
 	        loseGame();
 	    }
 	    // else {
@@ -100,7 +99,6 @@ var losses = 0;
 
 	function loseGame() {
 		console.log("function loseGame running");
-		console.log("scoreCount " + scoreCount);
 		losses++;
 	    $("#totalLossesHolder").html("<h1>" + "Losses " + losses + "</h1>");
 	    console.log("inside loseGame function gameResults -- scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
@@ -116,10 +114,10 @@ var losses = 0;
 		$("#scoreCountHolder").html("<h1>" + "game ended - Score count is " + scoreCount + "</h1>");
 	    targetNumber = 18 + Math.floor(Math.random() * 101);
 	    $("#targetNumberHolder").html("<h1>" + targetNumber + "</h1>");
-	    var num1 = Math.floor(Math.random() * (12-1+1)) + 1;
-	    var num2 = Math.floor(Math.random() * (12-1+1)) + 1;
-	    var num3 = Math.floor(Math.random() * (12-1+1)) + 1;
-	    var num4 = Math.floor(Math.random() * (12-1+1)) + 1;
+	    num1 = Math.floor(Math.random() * (12-1+1)) + 1;
+	    num2 = Math.floor(Math.random() * (12-1+1)) + 1;
+	    num3 = Math.floor(Math.random() * (12-1+1)) + 1;
+	    num4 = Math.floor(Math.random() * (12-1+1)) + 1;
 	    console.log("inside resetGame function - AFTER scoreCountset to 0 -- gameResults -- scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
 		//console.log(num1 + " " + num2 + " " + num3 + " " num4);
 	    console.log("function resetGame ran");
@@ -129,6 +127,6 @@ var losses = 0;
 
 
 layoutGame();
-clickToPlay();
+
 }); //end document.ready
 
