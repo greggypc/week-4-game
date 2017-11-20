@@ -5,39 +5,50 @@ body {
 	font-family: 'Amatic SC', cursive, 'Arial', sans serif;
 	font-size: 33px;
 	font-weight: bold;
+	line-height: 40px;
 }
 
 h1 {
 	font-size: 55px;
 	font-weight: bold;
+	line-height: 82px;
 }
 
+h2 {
+	font-size: 44px;
+	font-weight: bold;
+	line-height: 60px;
+}
 
-#scoreCountHolder {
+.gameSegmentBox {
+	margin-top: 15px;
 	background-color: #e9e9e9;
 	color: #e31b39;
 	padding: 10px;
 	text-align: center;
 	border: 4px solid #e31b39;
 	border-radius: 5px;
+	height: 150px;
 }
 
-#targetNumberHolder {
-	background-color: #e9e9e9;
-	color: #e31b39;
-	padding: 10px;
-	text-align: center;
-	border: 4px solid #e31b39;
-	border-radius: 5px;
+.smallLabel {
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 42px;
 }
 
 .crystalImg {
-	width: 135px;
+	width: 150px;
+	height: 150px;
 	padding: 10px;
-	margin: 0 5px 0 5px;
 	background-color: #e9e9e9;
 	border: 4px solid #e31b39;
 	border-radius: 5px;
+}
 
+.fillRow {
+	margin-top: 15px;
+	display: flex;
+    justify-content:space-between;
 }
 

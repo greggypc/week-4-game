@@ -18,7 +18,8 @@ var winPercentage = 0;
 			$("#totalWinsHolder").html("<h1>" + "Wins " + wins + "</h1>");
 			$("#totalLossesHolder").html("<h1>" + "Losses " + losses + "</h1>");
 			$("#winPercentageHolder").html("<h1>" + "Win Rate " + winPercentage + "%" + "</h1>");
-			$("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
+			$("#scoreCountHolder").html("<h1>" + scoreCount + "</h1>");
+			$("#gameMessageHolder").html("<h2>" + "Try your luck!" + "<br>" + "Click the ?'s to make Score Count = " + targetNumber + "</h2>");
 			};
 
 
@@ -29,28 +30,28 @@ var winPercentage = 0;
 				if (this.id === "billy") {
 					console.log("num1 = " + num1);
 			    scoreCount += num1;
-			    $("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
+			    $("#scoreCountHolder").html("<h1>" + scoreCount + "</h1>");
 			    console.log("billy button clicked -1");
 			    console.log("scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
 			    
 			    } else if (this.id === "light") {
 			    	console.log("num2 = " + num2);
 			      scoreCount += num2;
-			      $("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
+			      $("#scoreCountHolder").html("<h1>" + scoreCount + "</h1>");
 			      console.log("light button clicked -2");
 			      console.log("scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
 			      
 			    } else if (this.id === "gayle") {
 			    	console.log("num3 = " + num3);
 			      scoreCount += num3;
-			      $("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
+			      $("#scoreCountHolder").html("<h1>" + scoreCount + "</h1>");
 			      console.log("gayle button clicked -3");
 			      console.log("scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
 			      
 			    } else if (this.id === "pepsi") {
 			    	console.log("num4 = " + num4);
 			      scoreCount += num4;
-			      $("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
+			      $("#scoreCountHolder").html("<h1>" + scoreCount + "</h1>");
 			      console.log("pepsi button clicked -4");
 			      console.log("scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
 			      
@@ -82,7 +83,7 @@ var winPercentage = 0;
 		function winGame() {
 		console.log("function winGame running");
 		console.log("scoreCount " + scoreCount);
-
+		$("#gameMessageHolder").html("<h2>" + "You won with " + scoreCount + "! " + "<br>" + "Play again!" + "</h2>");
 	    wins++;
 	    $("#totalWinsHolder").html("<h1>" + "Wins " + wins + "</h1>");
 	    gamesPlayed++;
@@ -103,6 +104,7 @@ var winPercentage = 0;
 
 	function loseGame() {
 		console.log("function loseGame running");
+		$("#gameMessageHolder").html("<h2>" + "You lost with " + scoreCount + "! " + "<br>" + "Play again!" + "</h2>");
 		losses++;
 	    $("#totalLossesHolder").html("<h1>" + "Losses " + losses + "</h1>");
 	    gamesPlayed++;
@@ -123,8 +125,9 @@ var winPercentage = 0;
 	function resetGame() {
 		console.log("function resetGame running");
 		console.log("inside resetGame function - B4 scoreCountset to 0 -- gameResults -- scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
+		
 		scoreCount = 0;
-		$("#scoreCountHolder").html("<h1>" + "game ended - Score count is " + scoreCount + "</h1>");
+		$("#scoreCountHolder").html("<h1>" + scoreCount + "</h1>");
 	    targetNumber = 18 + Math.floor(Math.random() * 101);
 	    $("#targetNumberHolder").html("<h1>" + targetNumber + "</h1>");
 	    num1 = Math.floor(Math.random() * (12-1+1)) + 1;
