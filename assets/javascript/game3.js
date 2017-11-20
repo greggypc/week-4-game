@@ -1,7 +1,5 @@
 // Crystals Game - 2nd Javascript
 
-
-
 $(document).ready(function() {
 
 var targetNumber = Math.floor(Math.random() * (120-19+1)) + 19;
@@ -18,19 +16,14 @@ var winPercentage = 0;
 			$("#targetNumberHolder").html("<h1>" + targetNumber + "</h1>");
 			$("#totalWinsHolder").html("<h1>" + "Wins " + wins + "</h1>");
 			$("#totalLossesHolder").html("<h1>" + "Losses " + losses + "</h1>");
-			$("#winPercentageHolder").html("<h1>" + "Win % " + winPercentage + "</h1>");
+			$("#winPercentageHolder").html("<h1>" + "Win Rate " + winPercentage + "%" + "</h1>");
 			$("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
 			};
 
 
 		// function clickToPlay() {
 
-			
-
-
-	 // 		console.log("scoreCount " + scoreCount);
-	 // 		console.log("targetNumber " + targetNumber);
-			
+		
 			$(".crystalImg").click(function(){
 				if (this.id === "billy") {
 					console.log("num1 = " + num1);
@@ -38,30 +31,30 @@ var winPercentage = 0;
 			    $("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
 			    console.log("billy button clicked -1");
 			    console.log("scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
-			    gameResults();
+			    
 			    } else if (this.id === "light") {
 			    	console.log("num2 = " + num2);
 			      scoreCount += num2;
 			      $("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
 			      console.log("light button clicked -2");
 			      console.log("scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
-			      gameResults();
+			      
 			    } else if (this.id === "gayle") {
 			    	console.log("num3 = " + num3);
 			      scoreCount += num3;
 			      $("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
 			      console.log("gayle button clicked -3");
 			      console.log("scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
-			      gameResults();
+			      
 			    } else if (this.id === "pepsi") {
 			    	console.log("num4 = " + num4);
 			      scoreCount += num4;
 			      $("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
 			      console.log("pepsi button clicked -4");
 			      console.log("scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
-			      gameResults();
+			      
 			    } 
-
+			    gameResults();
 			    console.log("***didn't win or lose yet");
 			    });  //end click function
 				
@@ -91,6 +84,8 @@ var winPercentage = 0;
 
 	    wins++;
 	    $("#totalWinsHolder").html("<h1>" + "Wins " + wins + "</h1>");
+	    winPercentage = Math.round((wins / losses) * 100);
+	    $("#winPercentageHolder").html("<h1>" + "Win Rate " + winPercentage + "%" + "</h1>");
 	    console.log("inside winGame function gameResults -- scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
 	    resetGame();
 	    console.log("function winGame finished - restart");
@@ -102,6 +97,8 @@ var winPercentage = 0;
 		console.log("function loseGame running");
 		losses++;
 	    $("#totalLossesHolder").html("<h1>" + "Losses " + losses + "</h1>");
+	    winPercentage = Math.round((wins / losses) * 100);
+	    $("#winPercentageHolder").html("<h1>" + "Win Rate " + winPercentage + "%" + "</h1>");
 	    console.log("inside loseGame function gameResults -- scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
 	    resetGame();
 	    console.log("function loseGame finished - restart");
@@ -120,8 +117,7 @@ var winPercentage = 0;
 	    num3 = Math.floor(Math.random() * (12-1+1)) + 1;
 	    num4 = Math.floor(Math.random() * (12-1+1)) + 1;
 	    console.log("inside resetGame function - AFTER scoreCountset to 0 -- gameResults -- scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
-		//console.log(num1 + " " + num2 + " " + num3 + " " num4);
-	    console.log("function resetGame ran");
+		console.log("function resetGame ran");
 	    //return;
 	    //clickToPlay();
 	    };
