@@ -12,11 +12,13 @@ var num4 = Math.floor(Math.random() * (12-1+1)) + 1;
 var scoreCount = 0;
 var wins = 0;
 var losses = 0;
+var winPercentage = 0;
 
-		function layoutGame() {
+		function initializeGame() {
 			$("#targetNumberHolder").html("<h1>" + targetNumber + "</h1>");
 			$("#totalWinsHolder").html("<h1>" + "Wins " + wins + "</h1>");
 			$("#totalLossesHolder").html("<h1>" + "Losses " + losses + "</h1>");
+			$("#winPercentageHolder").html("<h1>" + "Win % " + winPercentage + "</h1>");
 			$("#scoreCountHolder").html("<h1>" + "Score count is " + scoreCount + "</h1>");
 			};
 
@@ -125,7 +127,7 @@ var losses = 0;
 	    };
 
 
-layoutGame();
+initializeGame();
 
 }); //end document.ready
 
