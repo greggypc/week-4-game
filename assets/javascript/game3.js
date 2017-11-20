@@ -10,6 +10,7 @@ var num4 = Math.floor(Math.random() * (12-1+1)) + 1;
 var scoreCount = 0;
 var wins = 0;
 var losses = 0;
+var gamesPlayed = 0;
 var winPercentage = 0;
 
 		function initializeGame() {
@@ -84,7 +85,14 @@ var winPercentage = 0;
 
 	    wins++;
 	    $("#totalWinsHolder").html("<h1>" + "Wins " + wins + "</h1>");
-	    winPercentage = Math.round((wins / losses) * 100);
+	    gamesPlayed++;
+	    if (wins !== 0 && gamesPlayed === 0) {
+	    	winPercentage = 100;
+	    }else if (wins === 0) {
+	    	winPercentage = 0;
+	    }else {
+	    	winPercentage = Math.round((wins / gamesPlayed) * 100);
+	    }
 	    $("#winPercentageHolder").html("<h1>" + "Win Rate " + winPercentage + "%" + "</h1>");
 	    console.log("inside winGame function gameResults -- scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
 	    resetGame();
@@ -97,7 +105,14 @@ var winPercentage = 0;
 		console.log("function loseGame running");
 		losses++;
 	    $("#totalLossesHolder").html("<h1>" + "Losses " + losses + "</h1>");
-	    winPercentage = Math.round((wins / losses) * 100);
+	    gamesPlayed++;
+	    if (wins !== 0 && gamesPlayed === 0) {
+	    	winPercentage = 100;
+	    }else if (wins === 0) {
+	    	winPercentage = 0;
+	    }else {
+	    	winPercentage = Math.round((wins / gamesPlayed) * 100);
+	    }
 	    $("#winPercentageHolder").html("<h1>" + "Win Rate " + winPercentage + "%" + "</h1>");
 	    console.log("inside loseGame function gameResults -- scoreCount: " + scoreCount + " targetNumber: " + targetNumber);
 	    resetGame();
