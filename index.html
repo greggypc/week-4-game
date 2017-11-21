@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Crystal Game</title>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -15,7 +16,7 @@
     <div class="container">
         <header class="row header">
             <div class="col-lg-12">
-                <h1>Crystal Collector</h1>
+                <h1>The Riddler</h1>
                 <p>This is an incredibly hard game. You have little chance of success.</p>
                 <p>If your win rate is above 60% after 10+ games, I salute you.</p>
         </header>
@@ -25,43 +26,39 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="gameSegmentBox">
-                        	<div class="smallLabel">Target Number</div>
-                        	<div id="targetNumberHolder"></div>
+                            <div class="smallLabel">Target Number</div>
+                            <div id="targetNumberHolder"></div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="gameSegmentBox">
-                        	<div class="smallLabel">Score Count</div>
-                        	<div id="scoreCountHolder"></div>
+                            <div class="smallLabel">Score Count</div>
+                            <div id="scoreCountHolder"></div>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-8">
                 <div class="row">
                     <div class="col-lg-12 fillRow">
                         <img class="crystalImg" src="assets/images/qmark.png" alt="?" id="billy" />
-		            	<img class="crystalImg" src="assets/images/qmark.png" alt="?" id="light" />
-		            	<img class="crystalImg" src="assets/images/qmark.png" alt="?" id="gayle" />
-		            	<img class="crystalImg" src="assets/images/qmark.png" alt="?" id="pepsi" />
+                        <img class="crystalImg" src="assets/images/qmark.png" alt="?" id="light" />
+                        <img class="crystalImg" src="assets/images/qmark.png" alt="?" id="gayle" />
+                        <img class="crystalImg" src="assets/images/qmark.png" alt="?" id="pepsi" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                    	<div class="gameSegmentBox">
-                        	<div id="gameMessageHolder"></div>
+                        <div class="gameSegmentBox">
+                            <div id="gameMessageHolder"></div>
                         </div>
                     </div>
                 </div>
             </div>
-
-           
         </div>
         <!-- end main game row -->
-
         <!-- results row -->
         <div class="row">
             <div class="col-lg-4">
@@ -73,13 +70,11 @@
             <div class="col-lg-4">
                 <div class="gameResultsRow" id="winPercentageHolder"></div>
             </div>
-        </div><!-- end wins/losses row -->
-        
-    </div><!--  end main container -->
-    
-
-    
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
-   
+        </div>
+        <!-- end wins/losses row -->
+    </div>
+    <!--  end main container -->
+        <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
+
 </html>
